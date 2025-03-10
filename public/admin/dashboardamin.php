@@ -25,10 +25,6 @@
                 <ul id="submenu" style="display: none;">
                     <li><a href="#" onclick="showSection('asistencias')"><i class="fas fa-list"></i> Asistencias</a>
                     <li><a href="#" onclick="showSection('usuarios')"><i class="fas fa-users"></i> Usuarios</a></li>
-                    <li><a href="#" onclick="showSection('roles')"><i class="fas fa-user-tag"></i> Roles</a></li>
-                    <li><a href="#" onclick="showSection('asignaciones')"><i class="fas fa-tasks"></i> Asignaciones</a>
-                    </li>
-                    <li><a href="#" onclick="showSection('permisos')"><i class="fas fa-lock"></i> Permisos</a></li>
                 </ul>
             </li>
         </ul>
@@ -49,10 +45,23 @@
 
         <div id="dashboard" class="section active">
             <div class="stats-container">
-                <div class="stat-card">
+                <!-- Asistencias Totales -->
+                <div class="stat-card" id="totalAsistencias">
                     <h3>Asistencias Totales</h3>
-                    <p class="stat-value">10</p>
-                    <p class="stat-change">+15% vs mes anterior</p>
+                    <p class="stat-value">Cargando...</p>
+                    <p class="stat-change">Cargando...</p>
+                </div>
+
+                <!-- Día con más asistencias -->
+                <div class="stat-card" id="diaMasAsistencias">
+                    <h3>Día con más Asistencias</h3>
+                    <p class="stat-value">Cargando...</p>
+                </div>
+
+                <!-- Última asistencia registrada -->
+                <div class="stat-card" id="ultimaAsistencia">
+                    <h3>Última Asistencia</h3>
+                    <p class="stat-value">Cargando...</p>
                 </div>
             </div>
         </div>
@@ -65,6 +74,13 @@
                         <i class="fa fa-file-pdf"></i> Exportar PDF
                     </button>
                 </a>
+                <!-- Contenedor de filtros -->
+                <div class="name-filter-container">
+                    <div class="name-input">
+                        <input type="text" id="nombreFiltro" class="text-input" placeholder="Buscar por nombre">
+                        <i class="fa fa-search search-icon"></i>
+                    </div>
+                </div>
             </div>
 
             <table id="asistenciasTable">
@@ -83,7 +99,40 @@
         </div>
 
         <div id="usuarios" class="section">
-            <button id="btnAgregarUsuario">Agregar Usuario</button>
+            <div class="actions-container">
+                <button id="btnAgregarUsuario">Agregar Usuario</button>
+            </div>
+            <!-- Modal para agregar usuario -->
+            <div id="modalAgregarUsuario" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Agregar Usuario</h2>
+                    <form id="formAgregarUsuario">
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" name="dni" required>
+
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo" name="cargo" required>
+
+                        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+                        <label for="enfermedades">Enfermedades:</label>
+                        <input type="text" id="enfermedades" name="enfermedades">
+
+                        <label for="horario_practicas">Horario de Prácticas:</label>
+                        <input type="text" id="horario_practicas" name="horario_practicas" required>
+
+                        <label for="universidad_instituto">Universidad / Instituto:</label>
+                        <input type="text" id="universidad_instituto" name="universidad_instituto" required>
+                        <button type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+
             <table id="usuariosTable">
                 <thead>
                     <tr>
@@ -99,100 +148,6 @@
                 </tbody>
             </table>
         </div>
-
-        <div id="roles" class="section">
-            <button>Agregar Rol</button>
-            <table id="rolesTable">
-                <thead>
-                    <tr>
-                        <th>ID Rol</th>
-                        <th>Nombre Usuario</th>
-                        <th>Nombre del Rol</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Juan Pérez</td>
-                        <td>Administrador</td>
-                        <td>
-                            <i class="fas fa-edit action-icon" title="Editar permiso"></i>
-                        </td>
-                        <td>
-                            <i class="fas fa-trash action-icon" title="Eliminar permiso"></i>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="asignaciones" class="section">
-            <button>Agregar Asignación</button>
-            <table id="asignacionesTable">
-                <thead>
-                    <tr>
-                        <th>ID Asignación</th>
-                        <th>Usuario</th>
-                        <th>Rol Asignado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Juan Pérez</td>
-                        <td>Administrador</td>
-                        <td>
-                            <i class="fas fa-edit action-icon" title="Editar asignación"></i>
-                            <i class="fas fa-trash action-icon" title="Eliminar asignación"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>María López</td>
-                        <td>Usuario</td>
-                        <td>
-                            <i class="fas fa-edit action-icon" title="Editar asignación"></i>
-                            <i class="fas fa-trash action-icon" title="Eliminar asignación"></i>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="permisos" class="section">
-            <button>Agregar Permiso</button>
-            <table id="permisosTable">
-                <thead>
-                    <tr>
-                        <th>ID Permiso</th>
-                        <th>Nombre del Permiso</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Acceso total</td>
-                        <td>
-                            <i class="fas fa-edit action-icon" title="Editar permiso"></i>
-                            <i class="fas fa-trash action-icon" title="Eliminar permiso"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Acceso limitado</td>
-                        <td>
-                            <i class="fas fa-edit action-icon" title="Editar permiso"></i>
-                            <i class="fas fa-trash action-icon" title="Eliminar permiso"></i>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
     </div>
 </body>
 

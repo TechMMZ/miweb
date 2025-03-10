@@ -287,33 +287,6 @@ tr:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.date-filter-container {
-    display: flex;
-    gap: 15px;
-}
-
-.date-input {
-    position: relative;
-}
-
-.date-picker {
-    padding: 10px;
-    padding-left: 35px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    width: 150px;
-}
-
-.date-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #555;
-}
-
 #btnExportarPDF {
     padding: 10px 15px;
     border: none;
@@ -324,4 +297,172 @@ tr:hover {
     align-items: center;
     gap: 8px;
     transition: 0.3s;
+}
+
+/* Contenedor general */
+.name-filter-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Contenedor del input */
+.name-input {
+    position: relative;
+}
+
+/* Input de texto */
+.text-input {
+    padding: 10px;
+    padding-left: 35px;
+    /* Espacio para el icono */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+}
+
+/* Icono de búsqueda */
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+/* MODAL: Contenedor principal */
+.modal {
+    display: none;
+    /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+/* ANIMACIÓN: Efecto de desvanecimiento (fade-in) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* CONTENIDO DEL MODAL */
+.modal-content {
+    background: #ffffff;
+    width: 50%;
+    max-width: 300px;
+    max-height: 80vh;
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideDown 0.3s ease-in-out;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+    /* Oculta la barra de scroll en Chrome, Edge y Safari */
+}
+
+/* ANIMACIÓN: Deslizamiento suave hacia abajo */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* BOTÓN DE CIERRE (X) */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón de cierre */
+.close:hover {
+    color: red;
+}
+
+/* TITULO DEL MODAL */
+.modal-content h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* ETIQUETAS DEL FORMULARIO */
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+/* CAMPOS DE ENTRADA */
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Efecto al hacer clic en el campo de entrada */
+.modal-content input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+/* BOTÓN DE GUARDAR */
+.modal-content button {
+    width: 98%;
+    background: #007bff;
+    margin-top: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.modal-content button:hover {
+    background: #0056b3;
+    /* Azul más oscuro */
+}
+
+/* RESPONSIVIDAD: Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 70%;
+        /* Reduce el ancho para adaptarse mejor */
+    }
 }
