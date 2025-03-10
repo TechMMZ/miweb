@@ -1,0 +1,234 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    /* Define la fuente de todo el documento */
+    background: linear-gradient(to right, #212529, #343a40);
+    /* Aplica un gradiente de color oscuro de izquierda a derecha */
+    color: white;
+    /* Define el color del texto como blanco */
+    margin: 0;
+    /* Elimina el margen predeterminado del body */
+    padding: 0;
+    /* Elimina el padding predeterminado del body */
+    display: flex;
+    /* Usa flexbox para organizar el contenido */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    height: 100vh;
+    /* Hace que el body ocupe toda la altura de la ventana */
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #343a40;
+    /* Fondo gris oscuro para el contenedor */
+    padding: 40px;
+    /* Espaciado interno de 40px en todas las direcciones */
+    border-radius: 10px;
+    /* Bordes redondeados con un radio de 8px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil alrededor del contenedor */
+    width: 100%;
+    /* Hace que el contenedor ocupe todo el ancho disponible */
+    max-width: 400px;
+    /* Establece un ancho máximo de 400px para el contenedor */
+    text-align: center;
+    /* Centra el texto dentro del contenedor */
+}
+
+/* Título */
+h1 {
+    font-size: 2rem;
+    /* Tamaño de fuente de 2rem */
+    margin-bottom: 20px;
+    /* Espaciado inferior de 20px */
+    color: #ffffff;
+    /* Color blanco para el texto del título */
+}
+
+/* Estilo para la imagen */
+.navbar-brand img {
+    width: 120px;
+    /* Establece el ancho de la imagen */
+    height: auto;
+    /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-bottom: 20px;
+    /* Espaciado inferior de 30px para separar la imagen del contenido */
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    /* Usa flexbox para organizar los elementos del formulario */
+    flex-direction: column;
+    /* Organiza los elementos de manera vertical */
+    align-items: stretch;
+    /* Asegura que los elementos del formulario ocupen todo el ancho */
+}
+
+/* Contenedor de cada campo (input o select) con ícono */
+.input-group {
+    position: relative;
+    /* Posiciona los elementos de manera relativa dentro del contenedor */
+    margin-bottom: 20px;
+    /* Espaciado inferior de 20px entre los campos */
+    width: 100%;
+    /* El campo ocupa todo el ancho disponible */
+}
+
+/* Ícono dentro del .input-group */
+.input-group i {
+    position: absolute;
+    /* Coloca el ícono de manera absoluta dentro del contenedor */
+    top: 50%;
+    /* Centra verticalmente el ícono */
+    left: 15px;
+    /* Coloca el ícono 15px desde el borde izquierdo */
+    transform: translateY(-50%);
+    /* Ajusta el ícono para que esté completamente centrado */
+    color: #adb5bd;
+    /* Establece el color del ícono a gris claro */
+    font-size: 1rem;
+    /* Tamaño de fuente de 1rem para el ícono */
+}
+
+/* Campos de texto y lista desplegable con el mismo estilo */
+.input-group input,
+.input-group select {
+    width: 100%;
+    /* Hace que los campos ocupen todo el ancho disponible */
+    padding: 12px 12px 12px 40px;
+    /* Agrega espaciado interno, más espacio a la izquierda para el ícono */
+    border: 2px solid #495057;
+    /* Borde gris oscuro */
+    border-radius: 4px;
+    /* Bordes redondeados con un radio de 4px */
+    background-color: #495057;
+    /* Fondo gris oscuro */
+    color: white;
+    /* Color blanco para el texto dentro del campo */
+    font-size: 1rem;
+    /* Tamaño de fuente de 1rem */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho del campo */
+}
+
+/* Efecto al enfocar */
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    /* Elimina el borde azul predeterminado al hacer foco */
+    border-color: #007bff;
+    /* Cambia el borde a azul al enfocar el campo */
+    background-color: #343a40;
+    /* Cambia el fondo a un gris más oscuro al enfocar */
+}
+
+/* Botones */
+button {
+    border: none;
+    /* Elimina el borde del botón */
+    padding: 12px;
+    /* Espaciado interno del botón */
+    color: white;
+    /* Color blanco para el texto del botón */
+    font-size: 1.1rem;
+    /* Tamaño de fuente de 1.1rem */
+    border-radius: 4px;
+    /* Bordes redondeados para el botón */
+    cursor: pointer;
+    /* Cambia el cursor a mano cuando pasa sobre el botón */
+    transition: background-color 0.3s ease;
+    /* Agrega una transición suave para el cambio de color */
+    margin-top: 15px;
+    /* Espaciado superior de 15px */
+    width: 100%;
+    /* El botón ocupa todo el ancho disponible */
+}
+
+/* Cambio de color al pasar el ratón por encima del botón */
+button:hover {
+    background-color: #0056b3;
+    /* Cambia el fondo a un azul más oscuro */
+}
+
+/* Enlaces */
+.links {
+    margin-top: 20px;
+    /* Espaciado superior de 20px */
+    font-size: 0.9rem;
+    /* Tamaño de fuente más pequeño para los enlaces */
+}
+
+.links a {
+    color: #17a2b8;
+    /* Color azul claro para los enlaces */
+    text-decoration: none;
+    /* Elimina el subrayado predeterminado de los enlaces */
+}
+
+/* Efecto al pasar el ratón por encima del enlace */
+.links a:hover {
+    text-decoration: underline;
+    /* Subraya el enlace cuando el ratón pasa sobre él */
+}
+
+/* Estilo específico para el campo de código generado */
+#generated_code {
+    width: 40%;
+    /* Reduce el ancho del campo a un 50% del contenedor (ajusta según tus necesidades) */
+    margin: 10px;
+    /* Espaciado interno */
+    border: 2px solid #495057;
+    /* Borde gris oscuro */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    background-color: #495057;
+    /* Fondo gris oscuro */
+    color: white;
+    /* Color del texto blanco */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño final del campo */
+}
+
+/* Estilo para el campo de texto 'readonly' (cuando no se puede editar) */
+#generated_code[readonly] {
+    /* background-color: #343a40; */
+    /* Fondo más oscuro cuando está en 'readonly' */
+    cursor: not-allowed;
+    /* Cambia el cursor a 'no permitido' */
+}
+
+/* Ajusta el espacio entre el campo 'Código Generado' y el botón 'Copiar' */
+button#copy_code {
+    margin-top: -3px;
+    /* Reduce el margen superior para acercar el botón al campo */
+}
+
+/* Si no tienes un ID específico para el botón de copiar, usa esta clase si es necesario */
+button {
+    margin-top: 15px;
+    /* Deja el margen normal para otros botones */
+}
+
+.admin-link {
+    font-size: 0.9rem;
+    /* Tamaño de fuente */
+    display: block;
+    /* Asegura que el enlace esté en una línea completa */
+    margin-top: 10px;
+    /* Ajusta este valor según la separación que necesites */
+    text-align: center;
+    /* Tamaño de fuente de 0.9rem */
+    color: #6c757d;
+    /* Azul claro para mejor visibilidad */
+    text-decoration: none;
+    /* Elimina el subrayado */
+}
+
+.admin-link:hover {
+    color: white;
+    /* Cambia el color al pasar el ratón por encima */
+}

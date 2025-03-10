@@ -1,0 +1,88 @@
+/* ===== Estilos generales ===== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+    background-color: #2a2f36;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* ===== Estilos para la tabla ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #32373e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #474d55;
+}
+
+th {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background-color: #3a4047;
+}
+
+tr:hover {
+    background-color: #50575d;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.02);
+}
+
+/* ===== Botón de cierre de sesión ===== */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #dc3545, #b52a37);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+a:hover {
+    background: linear-gradient(135deg, #b52a37, #9a202b);
+    transform: translateY(-3px);
+}
+
+/* ===== Título ===== */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}

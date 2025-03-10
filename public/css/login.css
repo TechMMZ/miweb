@@ -1,0 +1,209 @@
+/* ===== Estilos generales ===== */
+
+/* Establece la fuente global de la página y un fondo degradado oscuro */
+body {
+    font-family: Arial, sans-serif;
+    /* Fuente de texto */
+    background: linear-gradient(to right, #212529, #343a40);
+    /* Degradado de fondo oscuro */
+    color: white;
+    /* Color de texto blanco */
+    margin: 0;
+    /* Elimina márgenes exteriores */
+    padding: 0;
+    /* Elimina relleno exterior */
+    display: flex;
+    /* Usa flexbox para centrar contenido */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la pantalla */
+}
+
+/* ===== Contenedor principal ===== */
+
+/* Estilos para el formulario de acceso */
+.container {
+    background-color: #343a40;
+    /* Color de fondo oscuro */
+    padding: 40px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para dar efecto de profundidad */
+    width: 100%;
+    /* Ocupará todo el ancho disponible */
+    max-width: 350px;
+    /* Limita el ancho del contenedor */
+    text-align: center;
+    /* Centra el contenido */
+}
+
+/* Estilos para la imagen del logo */
+.container img {
+    max-width: 100%;
+    /* Evita que la imagen sobrepase el ancho del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-bottom: 15px;
+    /* Espacio entre la imagen y el siguiente elemento */
+}
+
+/* ===== Título ===== */
+
+/* Estilos para el encabezado */
+h1 {
+    font-size: 2rem;
+    /* Tamaño de fuente */
+    margin-bottom: 20px;
+    /* Espacio inferior */
+    color: #ffffff;
+    /* Color blanco */
+}
+
+/* ===== Grupo de entrada (DNI y contraseña) ===== */
+
+/* Contenedor del campo de entrada */
+.input-group {
+    display: flex;
+    /* Permite alinear el icono y el input en la misma línea */
+    align-items: center;
+    /* Alinea verticalmente los elementos */
+    border: 1px solid #aaa;
+    /* Borde visible */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 8px;
+    /* Espaciado interno */
+    box-sizing: border-box;
+    /* Mantiene el tamaño incluyendo el padding y border */
+    margin-bottom: 15px;
+    /* Espacio entre los grupos de entrada */
+    width: 100%;
+    /* Ocupará todo el ancho disponible */
+    background-color: #2d3238;
+    /* Fondo ligeramente más claro */
+}
+
+/* ===== Iconos en los campos de entrada ===== */
+
+/* Contenedor del icono */
+.icon-container {
+    padding: 10px;
+    /* Espaciado alrededor del icono */
+    color: #ddd;
+    /* Color del icono */
+    display: flex;
+    /* Mantiene el icono centrado */
+    align-items: center;
+    /* Alinea verticalmente */
+    justify-content: center;
+    /* Centra el icono */
+}
+
+/* ===== Campos de entrada ===== */
+
+/* Estilos para el campo de entrada */
+.input-group input {
+    border: none;
+    /* Elimina el borde predeterminado */
+    outline: none;
+    /* Evita el borde resaltado al hacer clic */
+    flex: 1;
+    /* Permite que el input ocupe el espacio restante */
+    padding: 10px;
+    /* Espaciado interno */
+    background: transparent;
+    /* Fondo transparente */
+    color: white;
+    /* Color del texto */
+    font-size: 1rem;
+    /* Tamaño del texto */
+    width: 100%;
+    /* Se asegurará de llenar el espacio disponible */
+}
+
+/* Estilos para el texto de ayuda dentro del input (placeholder) */
+.input-group input::placeholder {
+    color: #aaa;
+    /* Color gris claro para el texto */
+}
+
+/* ===== Botón de acceso ===== */
+
+/* Estilos generales para los botones */
+.btn {
+    display: block;
+    /* Se comporta como un bloque para ocupar todo el ancho */
+    width: 100%;
+    /* Ocupa el 100% del contenedor */
+    padding: 12px;
+    /* Espaciado interno */
+    font-size: 0.9rem;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Hace que el texto sea más grueso */
+    text-align: center;
+    /* Centra el texto dentro del botón */
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+    border: none;
+    /* Elimina bordes predeterminados */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor a mano al pasar sobre el botón */
+    transition: all 0.3s ease-in-out;
+    /* Animación suave */
+}
+
+/* Estilos específicos del botón principal */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    /* Degradado azul */
+    color: white;
+    /* Color de texto */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    /* Sombra para dar profundidad */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    /* Cambia a un azul más oscuro */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+    /* Aumenta la sombra para resaltar */
+    transform: translateY(-2px);
+    /* Mueve ligeramente el botón hacia arriba */
+}
+
+/* Efecto al hacer clic en el botón */
+.btn-primary:active {
+    transform: scale(0.98);
+    /* Reduce ligeramente el tamaño */
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.2);
+    /* Reduce la sombra */
+}
+
+/* ===== Enlace debajo del botón ===== */
+
+/* Estilos para el enlace "Ingresar como Administrador" */
+p a {
+    font-size: 0.9rem;
+    /* Tamaño de fuente */
+    color: #6c757d;
+    /* Color gris */
+    padding: 10px;
+    /* Espaciado */
+    text-decoration: none;
+    /* Elimina el subrayado predeterminado */
+}
+
+/* Efecto al pasar el mouse sobre el enlace */
+p a:hover {
+    color: #ffffff;
+    /* Cambia a blanco para mejor visibilidad */
+}
