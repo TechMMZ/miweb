@@ -1,3 +1,14 @@
+<?php
+session_start();
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['admin'])) {
+    header("Location: crear.php");
+    exit;
+}
+// Obtener el nombre del administrador desde la sesión
+$admin_nombres = isset($_SESSION['admin_nombres']) ? $_SESSION['admin_nombres'] : '';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +25,14 @@
 <body>
     <div class="sidebar">
         <h2>HASHTAGPE</h2>
-        <div class="user-info"><i class="fas fa-user-circle"></i>
-            <span>Bienvenido, Admin</span>
+        <div class="user-info">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-details">
+                <span class="welcome-text">Bienvenido,</span>
+                <span class="user-name"><?php echo htmlspecialchars($admin_nombres); ?></span>
+            </div>
         </div>
         <ul class="sidebar-menu">
             <li><a href="#" onclick="showSection('dashboard')"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>

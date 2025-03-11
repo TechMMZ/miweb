@@ -251,24 +251,65 @@ tr:hover {
     }
 }
 
+/* Estilos para la caja de bienvenida dentro del sidebar */
 .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
-    /* Espacio entre el icono y el texto */
-    font-size: 16px;
-    font-weight: bold;
-    /* color: var(--primary-color); */
-    padding: 10px 15px;
-    /* background: white; */
-    border-radius: 8px;
-    /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); */
+    justify-content: center;
+    /* Centrar contenido */
+    flex-direction: column;
+    /* Asegurar que el texto quede debajo del icono */
+    width: 90%;
+    /* Ancho adaptado al sidebar */
+    margin: 15px auto;
+    /* Centrar horizontalmente y dar espacio */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    /* Alinear texto */
 }
 
-.user-info i {
-    font-size: 24px;
-    /* Tamaño del icono */
-    color: var(--secondary-color);
+.user-info:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para el avatar (icono del usuario) */
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    /* Un poco más de transparencia */
+}
+
+.user-avatar i {
+    font-size: 22px;
+    color: white;
+}
+
+/* Contenedor del nombre y mensaje de bienvenida */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.welcome-text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    /* Blanco con opacidad */
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
 }
 
 .center {

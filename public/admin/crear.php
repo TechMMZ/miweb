@@ -31,7 +31,7 @@
                 <span class="icon-container">
                     <i class="fas fa-lock"></i>
                 </span>
-                <input type="password" id="nombre" name="nombre" placeholder="Ingrese Su Contraseña" maxlength="8" required>
+                <input type="password" id="password" name="password" placeholder="Ingrese Su Contraseña" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Ingresar</button>
